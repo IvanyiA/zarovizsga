@@ -18,12 +18,13 @@ public class DogTypes {
 
     public List<String> getDogsByCountry(String country) {
         try (Connection connection = dataSource.getConnection();
-             PreparedStatement statement = connection.prepareStatement("SELECT name FROM dog_types WHERE country = ? ORDER BY name;")) {
+             PreparedStatement statement = connection.prepareStatement("SELECT name FROM dog_types WHERE country = ? ORDER BY name")) {
             statement.setString(1, country.toUpperCase());
+
             return getDogsResult(statement);
 
         } catch (SQLException sqle) {
-            throw new IllegalStateException("Cannot read file", sqle);
+            throw new IllegalStateException("Cannot read file or error by insert", sqle);
         }
     }
 
