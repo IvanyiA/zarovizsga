@@ -3,11 +3,16 @@ package hu.nive.ujratervezes.zarovizsga.kennel;
 public abstract class Dog {
 
     private String name;
-    protected int happiness;
+    //    protected int happiness;
+    private int happiness;
 
     public Dog(String name) {
         this.happiness = 0;
         this.name = name;
+    }
+
+    protected void increaseHappiness(int diff) {
+        happiness += diff;
     }
 
     public String getName() {

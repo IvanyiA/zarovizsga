@@ -7,10 +7,12 @@ public class Husky extends Dog {
     }
 
     public void feed() {
-        super.happiness += 4;
+//        happiness += 4;
+        increaseHappiness(4);
     }
 
     public void play(int hours) {
-        super.happiness = hours * 3;
+//        happiness = hours * 3;
+        increaseHappiness(hours * 3);
     }
 }
